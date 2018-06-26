@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "Chrome Links++",
+  "description": "Enhancement links for Google Chrome",
+  "version": "1.0.0",
+
+  "icons": {
+    "32": "assets/img/ico_32.png",
+    "64": "assets/img/ico_64.png"
+  },
+
+  "browser_action": {
+    "default_icon": "assets/img/ico_32.png",
+    "default_popup": "popup.html",
+    "default_title": "Chrome Links++"
+  },
+
+  "permissions": [
+    "contextMenus",
+    "tabs"
+  ],
+
+  "background": {
+    "scripts": [
+      "assets/js/linkpp.js"
+    ]
+  }
+}
