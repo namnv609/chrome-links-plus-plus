@@ -25,23 +25,24 @@ chrome.contextMenus.create({
 });
 
 function goToCurrentTab(pageInfo, tabInfo) {
-  console.log("goToCurrentTab");
-  console.log(pageInfo);
-  console.log(tabInfo);
   chrome.tabs.update({
-    url: pageInfo.linkUrl
+    url: getUrl(pageInfo)
   });
 }
 
 function goToNewTab(pageInfo, tabInfo) {
   chrome.tabs.create({
-    url: pageInfo.linkUrl
+    url: getUrl(pageInfo)
   });
 }
 
 function goToNewWindow(pageInfo, tabInfo) {
   chrome.windows.create({
-    url: pageInfo.linkUrl,
+    url: getUrl(pageInfo),
     state: "maximized"
   });
+}
+
+function getUrl(pageInfo) {
+  return pageInfo.linkUrl || pageInfo.srcUrl;
 }
